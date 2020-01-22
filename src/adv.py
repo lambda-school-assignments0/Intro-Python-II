@@ -1,3 +1,5 @@
+import sys
+from player import Player
 from room import Room
 
 # Declare all the rooms
@@ -38,14 +40,33 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
+my_player = Player("Player 1", "outside")
 
 # Write a loop that:
-#
+while True == True:
 # * Prints the current room name
-# * Prints the current description (the textwrap module might be useful here).
-# * Waits for user input and decides what to do.
-#
-# If the user enters a cardinal direction, attempt to move to the room there.
-# Print an error message if the movement isn't allowed.
-#
-# If the user enters "q", quit the game.
+    print("Current Location: {}".format(room[my_player.current_room].name))
+
+    # * Prints the current description (the textwrap module might be useful here).
+    print("{}\n".format(room[my_player.current_room].description))
+
+    # * Waits for user input and decides what to do.
+    player_input = input("Where do you want to go?\n").lower()
+
+    # If the user enters "q", quit the game.
+    if player_input == "q":
+        print("Thanks for playing!")
+        sys.exit()
+
+    # If the user enters a cardinal direction, attempt to move to the room there.
+    # Print an error message if the movement isn't allowed.
+    if player_input in ["n", "e", "s", "w"]:
+        # If direction is valid, move in that direction
+        if hasattr(room[my_player.current_room], "{}_to".format(player_input)):
+            my_player.move(eval("room[my_player.current_room].{}_to".format(player_input)))
+        # If direction is invalid, print invalid direction error message
+        else:
+            print("Invalid direction to move!")
+    else:
+        # Print invalid command error message
+        print("Invalid command!")
