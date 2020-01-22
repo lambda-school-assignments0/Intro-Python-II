@@ -2,15 +2,18 @@
 # currently.
 
 class Player:
-    def __init__(self, name, current_room):
+    def __init__(self, name, current_room, inventory=[]):
         self.name = name
         self.current_room = current_room
+        self.inventory = inventory
 
     def move(self, new_location):
         self.current_room = new_location.name.split(' ')[0].lower()
 
-    # def take(self, item):
+    def take(self, item):
+        self.inventory.append(item)
 
     # def drop(self, item):
 
-    # def show_inventory(self):
+    def show_inventory(self):
+        print("Inventory: {}".format(self.inventory))
