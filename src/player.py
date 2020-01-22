@@ -8,3 +8,9 @@ class Player:
 
     def move(self, new_location):
         self.current_room = new_location.name.split(' ')[0].lower()
+
+    # def take(self, item):
+
+    # def drop(self, item):
+
+    # def show_inventory(self):
