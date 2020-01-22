@@ -44,13 +44,13 @@ my_player = Player("Player 1", "outside")
 
 # Write a loop that:
 while True == True:
-# * Prints the current room name
+    # Prints the current room name
     print("Current Location: {}".format(room[my_player.current_room].name))
 
-    # * Prints the current description (the textwrap module might be useful here).
+    # Prints the current description (the textwrap module might be useful here).
     print("{}\n".format(room[my_player.current_room].description))
 
-    # * Waits for user input and decides what to do.
+    # Waits for user input and decides what to do.
     player_input = input("Where do you want to go?\n").lower()
 
     # If the user enters "q", quit the game.
