@@ -120,5 +120,5 @@ while True == True:
         # Print invalid command error message
         print("Invalid command!")
 
-    # Clear console for readability
+    # TODO: Clear console for readability
     # os.system('cls')
