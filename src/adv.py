@@ -68,6 +68,9 @@ room['secret'].items = [item['gold'], item['map']]
 # Make a new player object that is currently in the 'outside' room.
 my_player = Player("Player 1", "outside")
 
+# Clear console for readability
+os.system('cls')
+
 # Write a loop that:
 while True == True:
     # Prints the current room name
@@ -81,6 +84,9 @@ while True == True:
 
     # Waits for user input and decides what to do.
     player_input = input("What do you do now?\n(type 'help' for more info)\n").lower()
+
+    # Clear console for readability
+    os.system('cls')
 
     # If the user enters "q", quit the game.
     if player_input == "q":
@@ -120,5 +126,4 @@ while True == True:
         # Print invalid command error message
         print("Invalid command!")
 
-    # TODO: Clear console for readability
-    # os.system('cls')
+    
